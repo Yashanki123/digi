@@ -1,0 +1,1387 @@
+{% load static %}
+{% block content %}
+
+
+    
+</html>
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>Site</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="{% static './vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{% static './assets/css/fontawesome.css' %}">
+
+    <link rel="stylesheet" href="{% static './assets/css/templatemo-digimedia-v3.css' %} ">
+    <link rel="stylesheet" href="{% static './assets/css/animated.css' %}">
+    <link rel="stylesheet" href="{% static './assets/css/owl.css' %}">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<!--
+
+TemplateMo 568 DigiMedia
+
+https://templatemo.com/tm-568-digimedia
+
+-->
+  </head>
+  <style>
+    
+.but
+{
+    background-color: #51c4ca;
+    color: #fff;
+    font-size: 14px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 7px;
+    border-radius: 5px;
+    border: 2px solid #51c4ca;
+    font-family: 'Work Sans', sans-serif;
+}
+.check:focus
+{
+  outline: none;
+  box-shadow: 0 0 0 0.25rem #fff;
+}
+.check
+{
+      padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #51c4ca;
+    color: #51c4ca;
+}
+.but:hover
+{
+  background-color: #51c4ca;
+  color: #fff;
+}
+
+
+body{
+	font-family: sans-serif;
+	margin:0;
+	line-height: 1.5;
+}
+
+*{
+	box-sizing: border-box;
+	margin:0;
+}
+
+.login-popup{
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1099;
+	background-color:rgba(0,0,0,0.6);
+	visibility: hidden;
+	opacity: 0;
+	transition: all 1s ease;
+}
+.login-popup.show{
+	visibility:visible;
+	opacity: 1;
+}
+.login-popup .box{
+	background-color:#ffffff;
+	width: 750px;
+	position: absolute;
+	left: 50%;
+	top:50%;
+	transform:translate(-50%,-50%);
+	display: flex;
+	flex-wrap: wrap;
+	opacity: 0;
+	margin-left: 50px;
+	transition: all 1s ease;
+
+}
+.login-popup.show .box{
+	opacity: 1;
+	margin-left: 0;
+}
+.login-popup .box .img-area{
+	flex:0 0 50%;
+	max-width: 50%;
+	position: relative;
+	overflow: hidden;
+	padding:30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.login-popup .box .img-area h1{
+	font-size: 30px;
+}
+.login-popup .box .img-area .img{
+	position: absolute;
+	left:0;
+	top:0;
+	width: 100%;
+	height: 100%;
+	background-image: url('img/bg.jpg');
+	background-size: cover;
+	background-position: center;
+	animation: zoomInOut 7s linear infinite;
+	z-index: -1;
+
+}
+@keyframes zoomInOut{
+	0%,100%{
+		transform: scale(1);
+	}
+	50%{
+		transform: scale(1.1);
+	}
+}
+.login-popup .box .form{
+	flex:0 0 50%;
+	max-width: 50%;
+	padding:40px 30px;
+}
+
+.login-popup .box .form h1{
+	color:#000000;
+	font-size: 30px;
+	margin:0 0 30px;
+}
+.login-popup .box .form .form-control{
+	height: 45px;
+	margin-bottom: 30px;
+	width: 100%;
+	border:none;
+	border-bottom:1px solid #cccccc;
+	font-size: 15px;
+	color:#000000;
+}
+.login-popup .box .form .form-control:focus{
+	outline: none;
+}
+.login-popup .box .form label{
+	font-size: 15px;
+	color:#555555;
+}
+.login-popup .box .form .btn{
+	width: 100%;
+	background-color: #46acc5;
+	margin-top:40px;
+	height: 45px;
+	border:none;
+	border-radius: 25px;
+	font-size: 15px;
+	text-transform: uppercase;
+	color:#ffffff;
+	cursor: pointer;
+}
+.login-popup .box .form .btn:focus{
+	outline: none;
+}
+
+.login-popup .box .form .close{
+	position: absolute;
+	right: 10px;
+	top:0px;
+	font-size: 30px;
+	cursor: pointer;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+	.login-popup .box{
+		width: calc(100% - 30px);
+	}
+	.login-popup .box .img-area{
+		display: none;
+	}
+	.login-popup .box .form{
+		flex: 0 0 100%;
+        max-width: 100%;
+	}
+}
+
+
+*{
+  font-family: sans-serif;
+}
+
+body{
+
+  background:fbfbff;
+}
+
+.section-padding{
+  padding-top:10px 10px;
+
+}
+
+.carousel-item{
+  height:65vh;
+  min-height:300px;
+}
+
+.carousel-caption{
+  bottom:200px;
+  z-index:2;
+}
+
+.carousel-caption h5{
+  font-size: 45px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 25px;
+
+
+}
+
+.carousel-caption p{
+  width: 60%;
+  margin: auto;
+  font-size: 18px;
+  line-height: 1.9;
+}
+
+.carousel-inner::before{
+  content:"" ;
+  position:absolute ;
+  width:70% ;
+  height:30% ;
+  top: 0;
+  left:0 ;
+  background:rgba(214, 208, 208, 0);
+  z-index:1;
+
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    height: 50px;
+    width: 50px;
+    outline: black;
+    background-color: rgba(10, 10, 10, 0.3);
+    background-size: 50%, 100%;
+    border-radius: 50%;
+    border: 3px solid black;
+
+}
+@media only screen and (min-width:768px) and (max-width:991px){
+  .carousel-caption{
+    bottom: 370px;
+  }
+  .carousel-caption p{
+    width: 100%;
+  }
+}
+
+
+@media only screen and (max-width:767px){
+  .carousel-caption{
+    bottom: 125px;
+  }
+  .carousel-caption h5{
+    font-size: 17px;
+    color: #000000;
+
+  }
+  .carousel-caption a{
+    padding: 10px 15;
+  }
+  .carousel-caption p{
+    width: 100px;
+    line-height: 1.6;
+    font-size: 12px;
+  }
+  
+}
+ 
+.main-banner .right-image img {
+  max-width: 593px;
+  border-radius: 50px 0px 50px 0px ;
+  box-shadow: 5px 8px #89d7eb;
+}
+
+.about-left-image img {
+  margin-right: 45px;
+  border-radius: 50px  0px 50px 0px;
+  box-shadow: 5px 8px #ecc6c6;
+
+  
+}
+
+.services .icon img {
+  margin-bottom: 10px;
+  max-width: 60px;
+  min-width: 60px;
+  border-radius: 50px  0px 50px 0px;
+  box-shadow: 5px 8px #ecc6c6;
+}
+
+.portfolio-item .thumb img {
+  border-top-right-radius: 23px;
+  border-top-left-radius: 23px;
+  overflow: hidden;
+  border-radius: 50px  0px 50px 0px;
+  box-shadow: 5px 8px #8abbc2;
+}
+
+.main-banner {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  padding: 142px 0px 120px 0px;
+  position: relative;
+  overflow: hidden;
+}
+
+.main-banner:after {
+  content: '';
+  background-image: url(..static/images/slider-left-dec.jpg);
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0;
+  top: 60px;
+  width: 262px;
+  height: 625px;
+  z-index: 1;
+}
+
+.main-banner:before {
+  content: '';
+  background-image: url(..static/images/slider-right-dec.jpg);
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 0;
+  top: 60px;
+  width: 1159px;
+  height: 797px;
+  z-index: -1;
+}
+
+
+
+.main-banner {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  padding: 142px 0px 120px 0px;
+  position: relative;
+  overflow: hidden;
+}
+
+.main-banner:after {
+  content: '';
+  background-image: url(../images/slider-left-dec.jpg);
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0;
+  top: 60px;
+  border-bottom-width: 20px;
+  width: 262px;
+  height: 500px;
+  z-index: 1;
+}
+
+.main-banner:before {
+  content: '';
+  background-image: url(../images/slider-right-dec.jpg);
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 0;
+  top: 60px;
+  width: 1000px;
+  height: 700px;
+  z-index: -1;
+}
+
+.main-banner .left-content {
+  margin-right: 15px;
+}
+
+.main-banner .left-content h6 {
+      text-transform: capitalize;
+    font-size: 20px;
+    font-weight: 600;
+    color: #51c4ca;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.main-banner .left-content h2 {
+  z-index: 2;
+  position: relative;
+  font-weight: 700;
+  font-size: 45px;
+  color: #2a2a2a;
+  margin-bottom: 10px;
+}
+
+.main-banner .left-content p {
+  margin-bottom: 9px;
+  margin-right: 45px;
+}
+
+.main-banner .right-image {
+  text-align: right;
+  position: relative;
+  z-index: 20;
+}
+
+.main-banner .right-image img {
+  max-width: 593px;
+  border-radius: 50px 0px 50px 0px ;
+  box-shadow: 5px 8px #ecc6c6;
+  
+}
+
+
+
+
+  </style>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky wow slideInDown " >
+      <!-- Pre-header Starts -->
+  <div class="pre-header  ">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-sm-6 col-7">
+          <ul class="info">
+            <li><a href="#"><i class="fa fa-envelope"></i>theclubco@company.com</a></li>
+            <li><a href="#"><i class="fa fa-phone"></i>010-020-0340</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-sm-4 col-5">
+
+          
+          <ul class="social-media">
+            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fab fa-behance"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
+            
+          </ul>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+  <!-- Pre-header End -->
+
+
+ 
+  <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="{% static 'logo.png' %} " style="height:50px; width:120px"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#top">LOCATION</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#about">ABOUT</a>
+          </li>
+          
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active " href="#contact" >CONTACT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active " href="#services" >SERVICES</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active " href="#portfolio" >VIRTUAL OFFICES</a>
+          </li>
+          
+           
+        </ul>
+
+
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 bg-light">
+          <li class="nav-item">
+            <a class="nav-link active " href="" >Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active " href="" >Login</a>
+          </li>
+          
+         
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+  </nav>
+
+
+    
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <div class="login-popup">
+    <div class="box">
+       <div class="img-area">
+         <div class="">
+         </div>
+         <img src="{% static './assets/images/bg1.jpg' %}">
+       </div>
+        <div class="form">
+          <div class="close">&times;</div>
+   
+         
+         
+         <h1>Contact Us</h1>
+         <form action="" method="post">
+          {% csrf_token %}
+
+
+         
+          <div class="form-group">
+            <input type="email" name="email" placeholder="Email" class="form-control">
+          </div>
+          <div class="form-group">
+            <input type="name" name="name" placeholder="Name" class="form-control">
+          </div>
+          <div class="form-group">
+            <input type="message" name="message" placeholder="Message" class="form-control">
+          </div>
+           <button name="submit" type="submit" id="contact-submit" class="btn">Submit</button>
+         </form>
+       </div>
+    </div>
+  
+    
+ </div>  
+
+  <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-6 align-self-center">
+              <div class="left-content show-up header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
+                <div class="row">
+                  <div class="col-lg-12">
+                   
+                    <h2>Coworking Office Spaces Built For Your Success</h2>
+                    <p>We’re in the people business providing transformational workspaces that are built to make you prosper. So whether you’re a startup, freelancer or a large established business, our coworking spaces guarantee to bring out the best in you.</p>
+
+                    <p>Welcome to 91Springboard.</p>
+                  </div>
+                  <div class="d-flex">
+                    <form action="" method="GET">
+                        <input type="text" name="keyword" placeholder= "Enter Your Location" aria-label="Search">
+                        <br>
+                        <br>
+                        <button class="but" type="submit">Search </button> 
+                    </form>
+                </div>
+
+
+
+
+                  <div class="col-lg-12">
+                    <div class="border-first-button scroll-to-section">
+                      <form action="" method="GET">
+                       <div class="row">
+                         <div class="col-md-5">
+                         </div>
+                       </div>
+
+                     </form>
+                    </div>
+                  </div>
+                  <br>
+
+                  <br>
+                  <div class="row">
+                  <div class="col-md-4">
+
+                  </div>
+                </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+                <img src="{% static './assets/images/slider-dec-v3.png' %}" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="bd-example">
+    <div id="carouselExampleCaptions" class="carousel slide  carousel-fade" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <a href=""><img src="https://images.unsplash.com/photo-1604328698692-f76ea9498e76?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" class="d-block w-100" alt="..."></a>
+          <div class="carousel-caption">
+            <h5 style="color: #0f0f0f;">First slide label</h5>
+            <p style="color: #1a1b1b;">Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <a href=""><img src="https://images.unsplash.com/photo-1542089363-bba089ffaa25?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" class="d-block w-100" alt="..."></a>
+          <div class="carousel-caption ">
+            <h5 style="color: #0f0f0f;">Second slide label</h5>
+            <p style="color: #1a1b1b;">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <a href=""></a><img src="https://images.unsplash.com/photo-1604328699206-5f24c5ed8dd4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80" class="d-block w-100" alt="..."></a>
+          <div class="carousel-caption ">
+            <h5 style="color: #0f0f0f;">Third slide label</h5>
+            <p style="color: #1a1b1b;">Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon "  aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+        <span class="carousel-control-next-icon fa-solid" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+
+  
+  <div id="about" class="about section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="about-left-image  wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s">
+                <img src="{% static './assets/images/about-dec-v3.png' %}" alt="">
+              </div>
+            </div>
+            <div class="col-lg-6 align-self-center  wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+              <div class="about-right-content">
+                <div class="section-heading">
+                  <h6>About Us</h6>
+                  <h4>Who is DigiMedia <em>Agency</em></h4>
+                  <div class="line-dec"></div>
+                </div>
+                <p>We hope this DigiMedia template is useful for your work. You can use this template for any purpose. You may <a rel="nofollow" href="http://paypal.me/templatemo" target="_blank">contribute a little amount</a> via PayPal to <a href="https://templatemo.com/contact" target="_blank">support TemplateMo</a> in creating new templates regularly.</p>
+                
+                </div> 
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="services" class="services section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="section-heading  wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
+            <h6>Our Services</h6>
+            <h4>What Our Agency <em>Provides</em></h4>
+            <div class="line-dec"></div>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="naccs">
+            <div class="grid">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="menu">
+                    <div class="first-thumb active">
+                      <div class="thumb">
+                        <span class="icon"><img src="{% static './assets/images/service-icon-01.png' %}" alt=""></span>
+                        Apartments
+                      </div>
+                    </div>
+                    <div>
+                      <div class="thumb">                 
+                        <span class="icon"><img src="{% static './assets/images/service-icon-02.png' %}" alt=""></span>
+                        Food &amp; Life
+                      </div>
+                    </div>
+                    <div>
+                      <div class="thumb">                 
+                        <span class="icon"><img src="{% static './assets/images/service-icon-03.png' %}" alt=""></span>
+                        Cars
+                      </div>
+                    </div>
+                    <div>
+                      <div class="thumb">                 
+                        <span class="icon"><img src="{% static './assets/images/service-icon-04.png' %}" alt=""></span>
+                        Shopping
+                      </div>
+                    </div>
+                    <div class="last-thumb">
+                      <div class="thumb">                 
+                        <span class="icon"><img src="{% static './assets/images/service-icon-01.png' %}" alt=""></span>
+                        Traveling
+                      </div>
+                    </div>
+                  </div>
+                </div> 
+                <div class="col-lg-12">
+                  <ul class="nacc">
+                    <li class="active">
+                      <div>
+                        <div class="thumb">
+                          <div class="row">
+                            <div class="col-lg-6 align-self-center">
+                              <div class="left-text">
+                                <h4>SEO Analysis &amp; Daily Reports</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedr do eiusmod deis tempor incididunt ut labore et dolore kengan darwin doerski token.
+                                  dover lipsum lorem and the others.</p>
+                                <div class="ticks-list"><span><i class="fa fa-check"></i> Optimized Template</span> <span><i class="fa fa-check"></i> Data Info</span> <span><i class="fa fa-check"></i> SEO Analysis</span>
+                                  <span><i class="fa fa-check"></i> Data Info</span> <span><i class="fa fa-check"></i> SEO Analysis</span> <span><i class="fa fa-check"></i> Optimized Template</span></div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedr do eiusmod deis tempor incididunt.</p>
+                              </div>
+                            </div>
+                            <div class="col-lg-6 align-self-center">
+                              <div class="right-image">
+                                <img src="{% static './assets/images/services-image.jpg' %}" alt="">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <div class="thumb">
+                          <div class="row">
+                            <div class="col-lg-6 align-self-center">
+                              <div class="left-text">
+                                <h4>Healthy Food &amp; Life</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedr do eiusmod deis tempor incididunt ut labore et dolore kengan darwin doerski token.
+                                  dover lipsum lorem and the others.</p>
+                                <div class="ticks-list"><span><i class="fa fa-check"></i> Optimized Template</span> <span><i class="fa fa-check"></i> Data Info</span> <span><i class="fa fa-check"></i> SEO Analysis</span>
+                                  <span><i class="fa fa-check"></i> Data Info</span> <span><i class="fa fa-check"></i> SEO Analysis</span> <span><i class="fa fa-check"></i> Optimized Template</span></div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedr do eiusmod deis tempor incididunt.</p>
+                              </div>
+                            </div>
+                            <div class="col-lg-6 align-self-center">
+                              <div class="right-image">
+                                <a href=""><img src="{% static './assets/images/services-image-02.jpg' %}" alt=""></a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <div class="thumb">
+                          <div class="row">
+                            <div class="col-lg-6 align-self-center">
+                              <div class="left-text">
+                                <h4>Car Re-search &amp; Transport</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedr do eiusmod deis tempor incididunt ut labore et dolore kengan darwin doerski token.
+                                  dover lipsum lorem and the others.</p>
+                                <div class="ticks-list"><span><i class="fa fa-check"></i> Optimized Template</span> <span><i class="fa fa-check"></i> Data Info</span> <span><i class="fa fa-check"></i> SEO Analysis</span>
+                                  <span><i class="fa fa-check"></i> Data Info</span> <span><i class="fa fa-check"></i> SEO Analysis</span> <span><i class="fa fa-check"></i> Optimized Template</span></div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedr do eiusmod deis tempor incididunt.</p>
+                              </div>
+                            </div>
+                            <div class="col-lg-6 align-self-center">
+                              <div class="right-image">
+                                <a href=""><img src="{% static './assets/images/services-image-03.jpg' %}" alt=""></a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <div class="thumb">
+                          <div class="row">
+                            <div class="col-lg-6 align-self-center">
+                              <div class="left-text">
+                                <h4>Online Shopping &amp; Tracking ID</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedr do eiusmod deis tempor incididunt ut labore et dolore kengan darwin doerski token.
+                                  dover lipsum lorem and the others.</p>
+                                <div class="ticks-list"><span><i class="fa fa-check"></i> Optimized Template</span> <span><i class="fa fa-check"></i> Data Info</span> <span><i class="fa fa-check"></i> SEO Analysis</span>
+                                  <span><i class="fa fa-check"></i> Data Info</span> <span><i class="fa fa-check"></i> SEO Analysis</span> <span><i class="fa fa-check"></i> Optimized Template</span></div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedr do eiusmod deis tempor incididunt.</p>
+                              </div>
+                            </div>
+                            <div class="col-lg-6 align-self-center">
+                              <div class="right-image">
+                                <a href=""><img src="{% static './assets/images/services-image-04.jpg' %}" alt=""></a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <div class="thumb">
+                          <div class="row">
+                            <div class="col-lg-6 align-self-center">
+                              <div class="left-text">
+                                <h4>Enjoy &amp; Travel</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedr do eiusmod deis tempor incididunt ut labore et dolore kengan darwin doerski token.
+                                  dover lipsum lorem and the others.</p>
+                                <div class="ticks-list"><span><i class="fa fa-check"></i> Optimized Template</span> <span><i class="fa fa-check"></i> Data Info</span> <span><i class="fa fa-check"></i> SEO Analysis</span>
+                                  <span><i class="fa fa-check"></i> Data Info</span> <span><i class="fa fa-check"></i> SEO Analysis</span> <span><i class="fa fa-check"></i> Optimized Template</span></div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedr do eiusmod deis tempor incididunt.</p>
+                              </div>
+                            </div>
+                            <div class="col-lg-6 align-self-center">
+                              <div class="right-image">
+                                <img src="{% static './assets/images/services-image.jpg' %}" alt="">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>          
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <div id="free-quote" class="free-quote">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 offset-lg-4">
+          <div class="section-heading  wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">
+            <h6>Get Your Free Quote</h6>
+            <h4>Grow With Us Now</h4>
+            <div class="line-dec"></div>
+          </div>
+        </div>
+        <div class="col-lg-8 offset-lg-2  wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+          <form id="query" action="" method="post">
+            {% csrf_token %}
+            <div class="row">
+              <div class="col-lg-4 col-sm-4">
+                <fieldset>
+                  <input type="web" name="web" class="website" placeholder="Your website URL..." autocomplete="on" required>
+                </fieldset>
+              </div>
+              <div class="col-lg-4 col-sm-4">
+                <fieldset>
+                  <input type="address" name="address" class="email" placeholder="Email Address..." autocomplete="on" required>
+                </fieldset>
+              </div>
+              <div class="col-lg-4 col-sm-4">
+                <fieldset>
+                  <button type="submit" class="main-button">Get Quote Now</button>
+                </fieldset>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="portfolio" class="our-portfolio section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5">
+          <div class="section-heading wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.3s">
+            <h6>Packages</h6>
+            <h4>See Our Famous <em>Packages</em></h4>
+            <div class="line-dec"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid wow fadeIn" data-wow-duration="1s" data-wow-delay="0.7s">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="loop owl-carousel">
+            <div class="item">
+              <a href="#">
+                <div class="portfolio-item">
+                <div class="thumb">
+                  <img src="{% static './assets/images/portfolio-01.jpg' %}" alt="">
+                </div>
+                <div class="down-content">
+                  <h4>Private Office</h4>
+                  <span>Accommodation:100</span>
+                
+                    <a href=""><button class="but">Book Now</button></a>
+                
+                </div>
+              </div>
+              </a>  
+
+            </div>
+            <div class="item">
+              <a href="#">
+                <div class="portfolio-item">
+                <div class="thumb">
+                  <img src="{% static './assets/images/portfolio-05.jpg' %}" alt="">
+                </div>
+                <div class="down-content">
+                  <h4>Private Office2</h4>
+                  <span>Accommodation:50</span>
+                  <a href=""><button class="but">Book Now</button></a>
+                </div>
+              </div>
+              </a>  
+            </div>
+            <div class="item">
+              <a href="#">
+                <div class="portfolio-item">
+                <div class="thumb">
+                  <img src="{% static './assets/images/portfolio-02.jpg' %}" alt="">
+                </div>
+                <div class="down-content">
+                  <h4>Conference room1</h4>
+                  <span>Accommodation:20-50</span>
+                  <a href=""><button class="but">Book Now</button></a>
+                </div>
+              </div>
+              </a>  
+            </div>
+            <div class="item">
+              <a href="#">
+                <div class="portfolio-item">
+                <div class="thumb">
+                  <img src="{% static './assets/images/portfolio-03.jpg' %}" alt="">
+                </div>
+                <div class="down-content">
+                  <h4>Conference room2</h4>
+                  <span>Accommodation:100</span>
+                  <a href=""><button class="but">Book Now</button></a>
+                </div>
+              </div>
+              </a>  
+            </div>
+            <div class="item">
+              <a href="#">
+                <div class="portfolio-item">
+                <div class="thumb">
+                  <img src="{% static './assets/images/portfolio-04.jpg ' %}" alt="">
+                </div>
+                <div class="down-content">
+                  <h4>Website Builder</h4>
+                  <span>Accommodation:100</span>
+                  <a href=""><button class="but">Book Now</button></a>
+                </div>
+              </div>
+              </a>  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+
+  <div id="portfolio" class="our-portfolio section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5">
+          <div class="section-heading wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.3s">
+            <h6>Our Portofolio</h6>
+            <h4>See Our <em>Projects</em></h4>
+            <div class="line-dec"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid wow fadeIn" data-wow-duration="1s" data-wow-delay="0.7s">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="loop owl-carousel">
+            <div class="item">
+              <a href="#">
+                <div class="portfolio-item">
+                <div class="thumb">
+                  <img src="{% static './assets/images/portfolio-01.jpg' %}" alt="">
+                </div>
+                <div class="down-content">
+                  <h4>Website Builder</h4>
+                  <span>Marketing</span>
+                </div>
+              </div>
+              </a>  
+            </div>
+            <div class="item">
+              <a href="#">
+                <div class="portfolio-item">
+                <div class="thumb">
+                  <img src="{% static './assets/images/portfolio-01.jpg' %}" alt="">
+                </div>
+                <div class="down-content">
+                  <h4>Website Builder</h4>
+                  <span>Marketing</span>
+                </div>
+              </div>
+              </a>  
+            </div>
+            <div class="item">
+              <a href="#">
+                <div class="portfolio-item">
+                <div class="thumb">
+                  <img src="{% static './assets/images/portfolio-02.jpg' %}" alt="">
+                </div>
+                <div class="down-content">
+                  <h4>Website Builder</h4>
+                  <span>Marketing</span>
+                </div>
+              </div>
+              </a>  
+            </div>
+            <div class="item">
+              <a href="#">
+                <div class="portfolio-item">
+                <div class="thumb">
+                  <img src="{% static './assets/images/portfolio-03.jpg' %}" alt="">
+                </div>
+                <div class="down-content">
+                  <h4>Website Builder</h4>
+                  <span>Marketing</span>
+                </div>
+              </div>
+              </a>  
+            </div>
+            <div class="item">
+              <a href="#">
+                <div class="portfolio-item">
+                <div class="thumb">
+                  <img src="{% static './assets/images/portfolio-04.jpg' %}" alt="">
+                </div>
+                <div class="down-content">
+                  <h4>Website Builder</h4>
+                  <span>Marketing</span>
+                </div>
+              </div>
+              </a>  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="contact" class="contact-us section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+          <div class="section-heading wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+            <h6>Contact Us</h6>
+            <h4>Get In Touch With Us <em>Now</em></h4>
+            <div class="line-dec"></div>
+          </div>
+        </div>
+        
+
+        <div class="col-lg-12 wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.25s">
+
+            <form id="contact" action="" method="post">
+              {% if error %}
+              <div class="alert alert-danger" role="alert">
+                Please enter a value
+              </div>
+              {% endif %}
+            {% csrf_token %}
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="contact-dec">
+                  <img src="" alt="">
+                </div>
+              </div>
+              <div class="col-lg-5">
+                <div id="map">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.842643990323!2d77.38721317437792!3d28.604497085355323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cef53be42998d%3A0xd3e2293f052f5507!2sPEGASUS%20TOWER!5e0!3m2!1sen!2sin!4v1683609932712!5m2!1sen!2sin" width="100%" height="636px" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+              </div>
+              <div class="col-lg-7">
+                <div class="fill-form">
+                  <div class="row">
+                    <div class="col-lg-4">
+                      <div class="info-post">
+                        <div class="icon">
+                          <img src="{% static './assets/images/phone-icon.png' %}" alt="">
+                          <a href="#">010-020-0340</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="info-post">
+                        <div class="icon">
+                          <img src="{% static './assets/images/email-icon.png' %}" alt="">
+                          <a href="#">our@email.com</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="info-post">
+                        <div class="icon">
+                          <img src="{% static './assets/images/location-icon.png' %}" alt="">
+                          <a href="#">123 Rio de Janeiro</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <fieldset>
+                        <input type="name" name="name" id="name" placeholder="Name" autocomplete="on" required>
+                      </fieldset>
+                      <fieldset>
+                        <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email" required="">
+                      </fieldset>
+                      <fieldset>
+                        <input type="phoneno" name="phoneno" id="phoneno" placeholder="phoneno" autocomplete="on">
+                      </fieldset>
+                    </div>
+                    <div class="col-lg-6">
+                      <fieldset>
+                        <textarea name="message" type="text" class="form-control" id="message" placeholder="Message" required=""></textarea>  
+                      </fieldset>
+                    </div>
+                    <div class="col-lg-12">
+                      <fieldset>
+                        <button type="submit" id="form-submit" class="main-button ">Send Message Now</button>
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<footer>
+    <div class="footer" id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+                    <h3> Mumbai </h3>
+                    <ul>
+                        <li> <a href="#about"> About </a> </li>
+                        <li> <a href="#contact"> Contact </a> </li>
+                        <li> <a href="#services"> Services </a> </li>
+                        <li> <a href="#portfolio"> Portfolio </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+                    <h3> Gurugram  </h3>
+                    <ul>
+                        <li> <a href="#about"> About </a> </li>
+                        <li> <a href="#contact"> Contact </a> </li>
+                        <li> <a href="#services"> Services </a> </li>
+                        <li> <a href="#portfolio"> Portfolio </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+                    <h3>Noida </h3>
+                    <ul>
+                        <li> <a href=""> Login </a> </li>
+                        <li> <a href=""> Register </a> </li>
+                        <li> <a href="#top"> Location </a> </li>
+                        <li> <a href="#services"> Services </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+                    <h3> Delhi </h3>
+                    <ul>
+                        <li> <a href="#portfolio"> Portfolio </a> </li>
+                        <li> <a href="#contact"> Contact </a> </li>
+                        <li> <a href=""> Register </a> </li>
+                        <li> <a href=""> Login </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">
+                    <h3>  Pune</h3>
+                    <ul>
+                        <li>
+                            <div class="input-append newsletter-box text-center">
+                                <input type="text" class="full form-control" placeholder="Email ">
+                                <button class="btn  bg-gray" type="button"> <i class="fa fa-long-arrow-right"> </i> </button>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="social">
+                        <li> <a href="#"> <i class=" fa fa-facebook">   </i> </a> </li>
+                        <li> <a href="#"> <i class="fa fa-twitter">   </i> </a> </li>
+                        <li> <a href="#"> <i class="fa fa-google-plus">   </i> </a> </li>
+                        <li> <a href="#"> <i class="fa fa-pinterest">   </i> </a> </li>
+                        <li> <a href="#"> <i class="fa fa-youtube">   </i> </a> </li>
+                    </ul>
+                </div>
+            </div>
+            <!--/.row--> 
+        </div>
+        <!--/.container--> 
+    </div>
+    <!--/.footer-->
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <p>© 2023 TheClubCo Business Hub Pvt. Ltd. 
+          
+        </div>
+      </div>
+    </div>
+    <!--/.footer-bottom--> 
+</footer>
+
+<script>
+  const myslide = document.querySelectorAll('.myslide'),
+	  dot = document.querySelectorAll('.dot');
+let counter = 1;
+slidefun(counter);
+
+let timer = setInterval(autoSlide, 8000);
+function autoSlide() {
+	counter += 1;
+	slidefun(counter);
+}
+function plusSlides(n) {
+	counter += n;
+	slidefun(counter);
+	resetTimer();
+}
+function currentSlide(n) {
+	counter = n;
+	slidefun(counter);
+	resetTimer();
+}
+function resetTimer() {
+	clearInterval(timer);
+	timer = setInterval(autoSlide, 8000);
+}
+
+function slidefun(n) {
+	
+	let i;
+	for(i = 0;i<myslide.length;i++){
+		myslide[i].style.display = "none";
+	}
+	for(i = 0;i<dot.length;i++) {
+		dot[i].className = dot[i].className.replace(' active', '');
+	}
+	if(n > myslide.length){
+	   counter = 1;
+	   }
+	if(n < 1){
+	   counter = myslide.length;
+	   }
+	myslide[counter - 1].style.display = "block";
+	dot[counter - 1].className += " active";
+}
+</script>
+
+  <!-- Scripts -->
+  <script>
+
+    const loginPopup = document.querySelector(".login-popup");
+    const close = document.querySelector(".close");
+  
+  
+    window.addEventListener("load",function(){
+   
+     showPopup();
+     // setTimeout(function(){
+     //   loginPopup.classList.add("show");
+     // },5000)
+  
+    })
+  
+    function showPopup(){
+          const timeLimit = 5 // seconds;
+          let i=0;
+          const timer = setInterval(function(){
+           i++;
+           if(i == timeLimit){
+            clearInterval(timer);
+            loginPopup.classList.add("show");
+           } 
+           console.log(i)
+          },1000);
+    }
+  
+  
+    close.addEventListener("click",function(){
+      loginPopup.classList.remove("show");
+    })
+  
+  </script>
+  <script src="{% static './vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static './vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static './assets/js/owl-carousel.js' %}"></script>
+  <script src="{% static './assets/js/animation.js' %}"></script>
+  <script src="{% static './assets/js/imagesloaded.js' %}"></script>
+  <script src="{% static  './assets/js/custom.js' %}"></script>
+
+</body>
+</html>
+
+{% endblock %}
+
